@@ -35,11 +35,8 @@ def convert_xml_txt_quest_ans(list_dir):
         root = tree.getroot()
         post = {}
         for child in root:
-            attrib = child.attrib
             text = child.attrib['Body']
             if child.attrib['PostTypeId'] == '1':
-                b = post.keys()
-                ggg = list(post.keys())
                 if child.attrib['Id'] not in list(post.keys()):
                     post.update({child.attrib['Id']: text})
                 else:
@@ -47,7 +44,6 @@ def convert_xml_txt_quest_ans(list_dir):
                     post.update({child.attrib['Id']: text})
 
             elif child.attrib['PostTypeId'] == '2':
-                ggg = list(post.keys())
                 if child.attrib['ParentId'] in list(post.keys()):
                     text = post[child.attrib['ParentId']] + ' ' + text
                     post.update({child.attrib['ParentId']: text})
