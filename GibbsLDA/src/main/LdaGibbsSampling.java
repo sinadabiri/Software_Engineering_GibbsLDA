@@ -7,11 +7,6 @@ import com.FileUtil;
 
 import conf.PathConfig;
 
-/**Liu Yang's implementation of Gibbs Sampling of LDA
- * @author yangliu
- * @blog http://blog.csdn.net/yangliuy
- * @mail yangliuyx@gmail.com
- */
 
 public class LdaGibbsSampling {
 	
