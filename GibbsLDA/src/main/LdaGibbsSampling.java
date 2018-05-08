@@ -7,7 +7,6 @@ import com.FileUtil;
 
 import conf.PathConfig;
 
-
 public class LdaGibbsSampling {
 	
 	public static class modelparameters {
@@ -32,10 +31,10 @@ public class LdaGibbsSampling {
 		String resultPath = PathConfig.LdaResultsPath;
 		
 		Documents docSet = new Documents();
-		docSet.readDocs("/Users/ashish/Downloads/Geo_Tweets_2016/tweets_news_text_only.txt");
+		docSet.readDocs("/Users/aman/Desktop/Courses/Spring 2018/Software Engineering/Project/data/android.stackexchange.com_Posts.txt");
 		System.out.println("wordMap size " + docSet.termToIndexMap.size());
 		FileUtil.mkdir(new File(resultPath));
-		LdaModel model = new LdaModel(0.1, 0.01, 500, 25, 100, 100);
+		LdaModel model = new LdaModel(0.1, 0.01, 500, 20, 100, 100);
 		System.out.println("1 Initialize the model ...");
 		model.initializeModel(docSet);
 		System.out.println("2 Learning and Saving the model...");

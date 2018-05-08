@@ -2,8 +2,8 @@ package conf;
 
 public class PathConfig {
 
-	public static String ldaDocsPath = "/Users/ashish/code/eventdetection/ldaoriginal";
+	//public static String ldaDocsPath = "/Users/aman/code/eventdetection/ldaoriginal";
 	
-	public static String LdaResultsPath = "/Users/ashish/code/eventdetection/data/ldaresults/";
+	public static String LdaResultsPath = "/Users/aman/Desktop/Courses/Spring 2018/Software Engineering/Project/results/";
 
 }
