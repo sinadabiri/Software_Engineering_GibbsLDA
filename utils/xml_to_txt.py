@@ -4,7 +4,7 @@ import os
 import csv
 import re
 
-vectorizer = CountVectorizer(min_df=1, stop_words='english', ngram_range=(1, 1), analyzer=u'word')
+vectorizer = CountVectorizer(min_df=0.05, max_df=0.85, stop_words=None, ngram_range=(1, 1), analyzer=u'word')
 analyze = vectorizer.build_analyzer()
 
 
@@ -12,7 +12,7 @@ def convert_xml_txt_questions(list_dir):
     all_domains = os.listdir(list_dir)
     for domain in all_domains:
         post_file_path = list_dir + '\\' + domain + '\\' + 'Posts.xml'
-        text_file = domain + '_questions_.txt'
+        text_file = domain + '_questions_max_df.txt'
         text_file_path = '../text_files/' + text_file
         with open(text_file_path, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
@@ -50,7 +50,7 @@ def convert_xml_txt_quest_ans(list_dir):
                 else:
                     post.update({child.attrib['ParentId']: text})
 
-        text_file = domain + '_ques&ans_.txt'
+        text_file = domain + '_ques&ans_max_df.txt'
         text_file_path = '../text_files/' + text_file
         with open(text_file_path, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
